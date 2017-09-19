@@ -11,20 +11,12 @@ class App extends Component {
     }
 
     this.increment = this.increment.bind(this)
-    this.decrement = this.decrement.bind(this)
   }
 
   increment() {
     this.setState(prev => ({
       ...prev,
       counter: prev.counter + 1
-    }))
-  }
-
-  decrement() {
-    this.setState(prev => ({
-      ...prev,
-      counter: prev.counter - 1
     }))
   }
 
@@ -36,12 +28,22 @@ class App extends Component {
     }
 
     return (
-      <div>
-        <h1>Hello World!</h1>
-        <p>{counter}</p>
+      <div style={{
+        display: 'flex',
+        flexDirection: 'column',
+        justifyContent: 'center',
+        alignItems: 'center'
+      }}>
+        <h3>Hello World!</h3>
+        <h1>{counter}</h1>
 
-        <button onClick={this.increment}>+</button>
-        <button onClick={this.decrement}>-</button>
+        <button
+          style={{
+            padding: '20px',
+            fontSize: '2rem'
+          }}
+          onClick={this.increment}
+        >+</button>
       </div>
     )
   }
