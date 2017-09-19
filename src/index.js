@@ -3,12 +3,6 @@ import ReactDOM from 'react-dom'
 
 const ROOT_NODE = document.getElementById('app')
 
-const Error = () => (
-  <div style={{ background: '#a00', color: '#fff'}}>
-    <h1>There was an error!</h1>
-  </div>
-)
-
 class ErrorBoundary extends Component {
   constructor(props) {
     super(props)
@@ -88,4 +82,11 @@ class App extends Component {
   }
 }
 
-ReactDOM.render(<ErrorBoundary><App /></ErrorBoundary>, ROOT_NODE)
+ReactDOM.render(
+  <div>
+    <h3>outside the boundary</h3>
+    <hr />
+    <ErrorBoundary><App /></ErrorBoundary>
+  </div>,
+  ROOT_NODE
+)
